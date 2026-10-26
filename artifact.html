@@ -1,0 +1,26 @@
+<title>Överlev Mördaren</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  /* One dark stage behind the game's own drawing, the same in every theme. */
+  :root { --stage: #1f1d2b; color-scheme: dark; }
+  html, body { height: 100%; }
+  body {
+    margin: 0;
+    background: var(--stage);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  canvas { display: block; border-radius: 6px; outline: none; }
+</style>
+<canvas id="game" tabindex="0"></canvas>
+<script src="game.js"></script>
+<script>
+  // Keys only reach the game once the frame has focus.
+  const gameCanvas = document.getElementById("game");
+  try { gameCanvas.focus(); } catch (e) { /* not allowed before a click */ }
+  gameCanvas.addEventListener("pointerdown", () => gameCanvas.focus());
+</script>

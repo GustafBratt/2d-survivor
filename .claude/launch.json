@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "2d-survivor",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["serve.js", "5510"],
+      "port": 5510
+    }
+  ]
+}
